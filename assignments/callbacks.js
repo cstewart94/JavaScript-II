@@ -2,7 +2,7 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
+
 
   // GIVEN THIS PROBLEM:
 
@@ -36,16 +36,26 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
   const test2 = firstItem(items, logExorbitantPrice);
   console.log(test2); // "this Pencil is worth a million dollars!"
-*/
 
 
-function getLength(arr, cb) {
+
+function getLength(arr, callback) {
   // getLength passes the length of the array into the callback.
+  return callback(arr.length);
 }
+getLength(items, function(lengthArray){
+  console.log(lengthArray);
+});
 
-function last(arr, cb) {
+
+function last(arr, callback) {
   // last passes the last item of the array into the callback.
+  return callback(arr[arr.length-1]);
 }
+last(items, function(lastArray){
+  console.log(lastArray);
+});
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
