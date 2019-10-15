@@ -25,17 +25,17 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
   // TEST 1 (inlined callback):
 
-  const test1 = firstItem(items, item => `I love my ${item}!`);
-  console.log(test1); // "I love my Pencil!"
+  //const test1 = firstItem(items, item => `I love my ${item}!`);
+  //console.log(test1); // "I love my Pencil!"
 
   // TEST 2 (declaring callback before hand):
 
-  function logExorbitantPrice(article) {
-    return `this ${article} is worth a million dollars!`;
-  };
+  //function logExorbitantPrice(article) {
+ //   return `this ${article} is worth a million dollars!`;
+  //};
 
-  const test2 = firstItem(items, logExorbitantPrice);
-  console.log(test2); // "this Pencil is worth a million dollars!"
+  //const test2 = firstItem(items, logExorbitantPrice);
+ // console.log(test2); // "this Pencil is worth a million dollars!"
 
 
 
@@ -57,23 +57,39 @@ last(items, function(lastArray){
 });
 
 
-function sumNums(x, y, cb) {
+function sumNums(x, y, callback) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return callback(x, y);
 }
+sumNums(5, 10, function(x,y){
+  console.log(x + y);
+});
 
-function multiplyNums(x, y, cb) {
+function multiplyNums(x, y, callback) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+return callback(x, y);
 }
+multiplyNums(5, 10, function(x,y){
+  console.log(x * y);
+});
 
-function contains(item, list, cb) {
+function contains(item, list, callback) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  if(list.includes(item)){
+    return callback(true);
+  }else{
+    return callback(false);
+  }
 }
+contains('yo-yo', items, function(ite){
+  console.log(ite);
+});
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
+//function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-}
+//}
