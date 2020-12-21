@@ -3,7 +3,17 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+function sayHello(name){
+  const greetinOne='How are you';
+  console.log(`Hello, ${name}!`);
 
+  gunction question(questionOne){
+    const day='today?';
+    console.log(`${greetingOne} ${day}`);
+  }
+  question();
+}
+sayHello('Orville');
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
